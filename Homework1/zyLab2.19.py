@@ -1,5 +1,5 @@
-#Waleed Yusuf
-#2104654
+# Waleed Yusuf
+# 2104654
 
 lj = int(input('Enter amount of lemon juice (in cups):\n'))
 water = int(input('Enter amount of water (in cups):\n'))
