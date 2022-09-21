@@ -1,5 +1,5 @@
-#Waleed Yusuf
-#2104654
+# Waleed Yusuf
+# 2104654
 
 dict = {
     "red": 35,
