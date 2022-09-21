@@ -1,5 +1,5 @@
-#Waleed Yusuf
-#2104654
+# Waleed Yusuf
+# 2104654
 
 user_num1 = int(input('Enter integer:\n'))
 print('You entered:', user_num1)
