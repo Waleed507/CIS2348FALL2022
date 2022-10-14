@@ -44,30 +44,32 @@ year = []
 date_list = []
 temp_month = ''
 temp_string = ''
-user_string = input()
-while user_string != '-1':  # Loop until user enters -1
-    temp_month = get_month_int(user_string.split()[0])
-    # Condition to make sure input is in the correct format
-    if temp_month != '0' and user_string.find(",") != -1 and user_string.find(", ") != -1:
-        month = temp_month
-        temp_string += month
-        day = user_string.split()[1]  # Gets the day from input
-        day = day.replace(",", "")
-        temp_string += '/'
-        temp_string += day
-        year = user_string.split()[2]  # Gets the year from input
-        temp_string += '/'
-        temp_string += year
-    else:
-        pass
-    d1 = date(int(year), int(month), int(day))
-    d2 = date.today()
-    if d1 > d2:  # Comparing input date with current date
-        temp_string = ''
+user_string = ''
+input_file = open('inputDates.txt', 'r')
 
-    date_list.append(temp_string)  # Adding to end of the list
-    temp_string = ''
-    user_string = input()
+for each_line in input_file:  # Loop to read line by line
+    if each_line != '-1':
+        user_string = each_line
+        temp_month = get_month_int(user_string.split()[0])
+        # Condition to make sure input is in the correct format
+        if temp_month != '0' and user_string.find(",") != -1 and user_string.find(", ") != -1:
+            month = temp_month
+            temp_string += month
+            day = user_string.split()[1]  # Gets the day from input
+            day = day.replace(",", "")
+            temp_string += '/'
+            temp_string += day
+            year = user_string.split()[2]  # Gets the year from input
+            temp_string += '/'
+            temp_string += year
+        else:
+            pass
+        d1 = date(int(year), int(month), int(day))
+        d2 = date.today()
+        if d1 > d2:  # Comparing input date with current date
+            temp_string = ''
+        date_list.append(temp_string)  # Adding to end of the list
+        temp_string = ''
 for item in date_list:  # Loop to filter the desired output
     if item in date_list == " ":
         date_list.remove(" ")
