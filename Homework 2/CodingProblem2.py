@@ -73,4 +73,7 @@ for each_line in input_file:  # Loop to read line by line
 for item in date_list:  # Loop to filter the desired output
     if item in date_list == " ":
         date_list.remove(" ")
-    print(item)
+with open('parsedDates.txt', 'w') as open_file:  # Write the output to a text file
+    for dates in date_list:
+        open_file.write(f'{dates}\n')
+open_file.close()
